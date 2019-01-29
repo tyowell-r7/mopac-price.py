@@ -38,12 +38,14 @@ try:
 		}
 
 		response = requests.post('https://mopac-fare.mroms.us/HistoricalFare/ViewHistoricalFare', headers=headers, data=data, verify=False)
-
-		price = response.text
-		price2 = json.loads(price)
-		print (date1)
-		finalprice = (price2[1]['tripRate'])
-		print (finalprice)
+		try:
+			price = response.text
+			price2 = json.loads(price)
+			print (date1)
+			finalprice = (price2[1]['tripRate'])
+			print (finalprice)
+		except:
+			print ("SSL Connection Error")
 
 # Append results to the file
 		target = open("Results.csv", 'a')

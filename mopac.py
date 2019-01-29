@@ -49,7 +49,7 @@ try:
 
 # Append results to the file
 		target = open("Results.csv", 'a')
-		target.write(datetime.now().strftime('%m-%d-%Y %H:%M') + ";$"+ str(finalprice) + "\n")
+		target.write(datetime.now().strftime('%m-%d-%Y %H:%M') + ",$"+ str(finalprice) + "\n")
 		target.close()
 
 # Make it Flash Color
